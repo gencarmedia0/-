@@ -1,0 +1,512 @@
+/* General Styles */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif, 'Poppins', sans-serif;
+  text-decoration: none;
+  list-style: none;
+  scroll-behavior: smooth;
+}
+
+.about-container {
+  display: flex;
+  background: url(wal6.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.profile-card {
+  background: transparent;
+  backdrop-filter: blur(20px);
+  box-shadow: 15px 15px 20px #bebebe,
+             -15px -15px 20px black;
+  width: 380px;
+  padding: 3rem;
+  border: 7px solid black;
+  border-radius: 20px;
+  color: #fff;
+  margin: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 7%;
+  position: absolute;
+  width: 58%;
+  bottom: 20px;
+  background-color: black;
+  border: 4px solid black;
+  top: 0;
+  border-top: none;
+  border-radius: 0 0 1rem 1rem;
+  /* box-shadow: 0px 0px 10px 5px rgba(255, 255, 255, 0.7); */
+}
+
+.card-top-para {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.profile-card .profile-pic {
+  margin-top: 60px;
+  margin-bottom: 7px;
+  overflow: hidden;
+}
+
+.profile-card .profile-pic img {
+  border: 5px solid black;
+  filter: brightness(70%);
+  width: 250px;
+  border-radius: 10px;
+}
+
+.profile-card .profile-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+}
+
+.profile-details .intro {
+  display: flex;
+  margin-top: 3px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profile-details .intro h3 {
+  font-size: 25px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.profile-details .intro h1 {
+  background: black;
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 400;
+  border-radius: 10px;
+  padding: 11px 10px;
+  margin: 8px;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  overflow: hidden;
+  height: 3rem;
+  background-size: 300% 300%;
+  backdrop-filter: blur(1rem);
+  border-radius: 5rem;
+  transition: 0.5s;
+  animation: gradient_301 5s ease infinite;
+  border: double 4px transparent;
+  background-image: linear-gradient(#212121, #212121),  linear-gradient(137.48deg, #ffdb3b 10%,#FE53BB 45%, #8F51EA 67%, #0044ff 87%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+#container-stars {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.5s;
+  backdrop-filter: blur(1rem);
+  border-radius: 5rem;
+}
+
+.strong {
+  z-index: 2;
+  font-family: 'Avalors Personal Use';
+  font-size: 10px;
+  letter-spacing: 5px;
+  color: #FFFFFF;
+  text-shadow: 0 0 4px white;
+}
+
+#glow {
+  position: absolute;
+  display: flex;
+  width: 12rem;
+}
+
+.circle {
+  width: 100%;
+  height: 30px;
+  filter: blur(2rem);
+  animation: pulse_3011 4s infinite;
+  z-index: -1;
+}
+
+.circle:nth-of-type(1) {
+  background: rgba(254, 83, 186, 0.636);
+}
+
+.circle:nth-of-type(2) {
+  background: rgba(142, 81, 234, 0.704);
+}
+
+.btn:hover #container-stars {
+  z-index: 1;
+  background-color: #212121;
+}
+
+.btn:hover {
+  transform: scale(1.1)
+}
+
+.btn:active {
+  border: double 4px #FE53BB;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  animation: none;
+}
+
+.btn:active .circle {
+  background: #FE53BB;
+}
+
+#stars {
+  position: relative;
+  background: transparent;
+  width: 200rem;
+  height: 200rem;
+}
+
+#stars::after {
+  content: "";
+  position: absolute;
+  top: -10rem;
+  left: -100rem;
+  width: 100%;
+  height: 100%;
+  animation: animStarRotate 90s linear infinite;
+}
+
+#stars::after {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+}
+
+#stars::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 170%;
+  height: 500%;
+  animation: animStar 60s linear infinite;
+}
+
+#stars::before {
+  background-image: radial-gradient(#ffffff 1px, transparent 1%);
+  background-size: 50px 50px;
+  opacity: 0.5;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-135rem);
+  }
+}
+
+@keyframes animStarRotate {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0);
+  }
+}
+
+@keyframes gradient_301 {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse_3011 {
+  0% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    transform: scale(0.75);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+.skills {
+	text-align: left;
+	padding: 15px;
+}
+
+.skills ul {
+  background-color: black;
+  border-radius: 12px;
+  width: 250px;
+	list-style-type: none;
+  font-size: 25px;
+  color: white;
+	margin: 0;
+	padding: 10px;
+}
+
+.skills ul li {
+	border: 1px solid white;
+	border-radius: 5px;
+	display: inline-block;
+	font-size: 12px;
+	margin: 0 7px 7px 0;
+	padding: 7px;
+}
+
+.button-container {
+  display: flex;
+  background-color: black;
+  padding: 6px 10px;
+  margin-top: 5px;
+  width: 30px;
+  height: 40px;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 20px;
+}
+
+.button {
+  outline: 0 !important;
+  border: 0 !important;
+  width: 40px;
+  height: 40px;
+  font-weight: bolder;
+  border-radius: 50%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.icon {
+  font-size: 20px;
+}
+/* Media Queries */
+
+/* Tablets and small devices (landscape) */
+@media (max-width: 1024px) {
+  .profile-card {
+      width: 90%;
+      padding: 2rem;
+  }
+
+  .profile-card .profile-pic img {
+      width: 200px;
+  }
+
+  .btn-shine {
+      font-size: 14px;
+      margin-top: 30px;
+      margin-left: 50px;
+  }
+
+  .button-container {
+      width: 200px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 768px) {
+  .about-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .profile-card {
+      width: 90%;
+      padding: 1.5rem;
+      margin: 10px 0;
+  }
+
+  .profile-card .profile-pic img {
+      width: 150px;
+  }
+
+  .profile-details .intro h3 {
+      font-size: 20px;
+  }
+
+  .profile-details .intro h1 {
+      font-size: 14px;
+  }
+
+  .btn-shine {
+      font-size: 12px;
+      margin-top: 20px;
+      margin-left: 40px;
+  }
+
+  .button-container {
+      width: 180px;
+  }
+}
+
+/* Extra small devices (phones in portrait mode) */
+@media (max-width: 480px) {
+  .profile-card {
+      padding: 1rem;
+  }
+
+  .profile-card .profile-pic img {
+      width: 250px;
+  }
+
+  .profile-details .intro {
+    width: 200px;
+  }
+  
+  .profile-details .intro h3 {
+    margin-top: 5px;
+      font-size: 30px;
+  }
+
+  .profile-details .intro h1 {
+      font-size: 12px;
+  }
+
+  .btn-shine {
+      font-size: 10px;
+      margin-top: 15px;
+      margin-left: 30px;
+  }
+
+  .button-container {
+      width: 250px;
+  }
+}
+
+/* From Uiverse.io by Juanes200122 */ 
+.container {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+  background: #ececec;
+  margin: 0 15px;
+  padding: 10px 20px;
+  border-radius: 7px;
+  user-select: none;
+}
+
+.container .skill-box {
+  width: 100%;
+  margin: 25px 0;
+}
+
+.skill-box .title {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.skill-box .skill-bar {
+  height: 8px;
+  width: 100%;
+  border-radius: 6px;
+  margin-top: 6px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.skill-bar .skill-per {
+  position: relative;
+  display: block;
+  height: 100%;
+  width: 90%;
+  border-radius: 6px;
+  background: #000000;
+  animation: progress 0.4s ease-in-out forwards;
+  opacity: 0;
+}
+
+.skill-per.html {
+  /*progreso de las diferentes lenguajes*/
+  width: 80%;
+  animation-delay: 0.1s;
+}
+
+.skill-per.css {
+  /*progreso de las diferentes lenguajes*/
+  width: 30%;
+  animation-delay: 0.1s;
+}
+
+.skill-per.javascript {
+  /*progreso de las diferentes lenguajes*/
+  width: 40%;
+  animation-delay: 0.2s;
+}
+
+.skill-per.nodejs {
+  /*progreso de las diferentes lenguajes*/
+  width: 70%;
+  animation-delay: 0.3s;
+}
+
+@keyframes progress {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
